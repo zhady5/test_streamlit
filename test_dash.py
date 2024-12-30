@@ -6,18 +6,9 @@ import seaborn as sns
 
 # Настраиваем стили для фона и отступов
 st.markdown(
-    f"""
-    <style>
-        body {{
-            background-color: #ffb347 !important;
-            margin-left: 10%;  /* Отступ слева */
-            margin-right: 10%; /* Отступ справа */
-        }}
-    </style>
-    """,
+    f""" <style> html, body {{ background-color: #ffb347 !important; margin-left: 10% !important; /* Отступ слева */ margin-right: 10% !important; /* Отступ справа */ padding: 0 !important; }} .element-container {{ margin-left: auto !important; margin-right: auto !important; width: 80% !important; }} </style> """,
     unsafe_allow_html=True
 )
-
 # Заголовок
 st.title("Мой Дашборд")
 

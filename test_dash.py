@@ -8,7 +8,7 @@ import seaborn as sns
 st.set_page_config(
     page_title="Аналитический Дашборд",
     page_icon="📊",
-    layout="wide",
+    layout="centered",
     initial_sidebar_state="expanded",
 )
 
@@ -18,7 +18,7 @@ st.markdown("""
     @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
     
     .stApp {
-        background-color: white;
+        background-color: #ffb347;
     }
     .main-content {
         max-width: 1200px;

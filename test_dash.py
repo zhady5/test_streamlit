@@ -12,47 +12,34 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
+
 # Применение пользовательского CSS
 st.markdown("""
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
-    
-    .stApp {
-        background-color: #ffb347;
+    .reportview-container {
+        background-color: white;
     }
-    .main-content {
+    .main {
+        background-color: white;
+    }
+    .stApp {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 30px;
         background-color: #ffb347;
+        padding: 2rem;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    h1, h2, h3, h4 {
-        font-family: 'Open Sans', sans-serif;
-        color: #333;
-        font-weight: 600;
-    }
-    p {
-        font-family: 'Open Sans', sans-serif;
-        color: #666;
-        font-size: 14px;
-        line-height: 1.6;
-    }
-    .metric-card {
-        background-color: #f5dfbf;
-        padding: 15px;
-        border-radius: 10px;
-        margin-bottom: 15px;
-    }
-    .metric-value {
-        font-size: 18px;
-        font-weight: 600;
-        color: #333;
-    }
-    .stSelectbox {
-        background-color: #f5dfbf;
+    
+    /* Медиа-запрос для мобильных устройств */
+    @media (max-width: 768px) {
+        .stApp {
+            padding: 1rem;
+        }
     }
 </style>
 """, unsafe_allow_html=True)
+
+
 # Оборачиваем содержимое в div с классом 'main'
 st.markdown('<div class="main">', unsafe_allow_html=True)
 

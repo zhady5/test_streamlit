@@ -25,8 +25,6 @@ st.markdown("""
         margin: 0 auto;
         padding: 30px;
         background-color: #ffb347;
-        border-radius: 10px;
-        box-shadow: 0 10px 15px rgba(0,0,0,0.05);
     }
     h1, h2, h3, h4 {
         font-family: 'Open Sans', sans-serif;

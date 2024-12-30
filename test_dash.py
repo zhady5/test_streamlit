@@ -101,14 +101,15 @@ def plot_chart(data, x, y, kind, ax):
     ax.set_xlabel(x, fontsize=12)
     ax.set_ylabel(y, fontsize=12)
     ax.tick_params(labelsize=10)
+    ax.grid(False)
 
 # Настройка стиля графиков
 #plt.style.use('seaborn')
 colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b']
 sns.set_palette(sns.color_palette(colors))
 sns.set(rc={"axes.facecolor": "#ffb347", "figure.facecolor": "#ffb347"})
-sns.axes_style("ticks")
-sns.despine()
+#sns.axes_style("ticks")
+#sns.despine()
 
 # Графики
 st.subheader("Анализ Данных")

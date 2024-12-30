@@ -18,11 +18,13 @@ st.markdown("""
     @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
     
     .stApp {
-        background-color: #ffb347;
+        background-color: white;
     }
-    .main {
-        background-color: #ffb347;
+    .main-content {
+        max-width: 1200px;
+        margin: 0 auto;
         padding: 30px;
+        background-color: #ffb347;
         border-radius: 10px;
         box-shadow: 0 10px 15px rgba(0,0,0,0.05);
     }
@@ -53,7 +55,6 @@ st.markdown("""
     }
 </style>
 """, unsafe_allow_html=True)
-
 # Оборачиваем содержимое в div с классом 'main'
 st.markdown('<div class="main">', unsafe_allow_html=True)
 

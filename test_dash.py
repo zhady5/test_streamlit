@@ -9,7 +9,7 @@ st.markdown(
     f"""
     <style>
         body {{
-            background-color: #ffb347;
+            background-color: #ffb347 !important;
             margin-left: 10%;  /* Отступ слева */
             margin-right: 10%; /* Отступ справа */
         }}

@@ -36,6 +36,34 @@ st.markdown("""
             padding: 1rem;
         }
     }
+
+    h1, h2, h3, h4 {
+        font-family: 'Open Sans', sans-serif;
+        color: #333;
+        font-weight: 600;
+    }
+    p {
+        font-family: 'Open Sans', sans-serif;
+        color: #666;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    .metric-card {
+        background-color: #f5dfbf;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+    .metric-value {
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+    }
+    .stSelectbox {
+        background-color: #f5dfbf;
+    }
+
+
 </style>
 """, unsafe_allow_html=True)
 

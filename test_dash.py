@@ -119,7 +119,7 @@ def plot_chart(data, x, y, kind, ax):
     ax.tick_params(labelsize=10)
 
 # Настройка стиля графиков
-plt.style.use('seaborn')
+#plt.style.use('seaborn')
 colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b']
 sns.set_palette(sns.color_palette(colors))
 

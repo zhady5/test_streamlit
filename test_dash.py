@@ -9,12 +9,12 @@ st.markdown(
     f"""
     <style>
         body {{
-            background-color: #{{}};
+            background-color: #ffb347;
             margin-left: 10%;  /* Отступ слева */
             margin-right: 10%; /* Отступ справа */
         }}
     </style>
-    """.format('ffb347'),
+    """,
     unsafe_allow_html=True
 )
 

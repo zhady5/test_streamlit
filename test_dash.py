@@ -12,59 +12,44 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# Применение пользовательского CSS для стиля New York Times
+# Применение пользовательского CSS
 st.markdown("""
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
     
     .stApp {
         background-color: #ffb347;
     }
     .main {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 0 20px;
+        background-color: #ffb347;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.05);
     }
-    .stMetric {
-        background-color: #f8f8f8;
-        padding: 20px;
-        border: 1px solid #e0e0e0;
-        font-family: 'Source Sans Pro', sans-serif;
+    h1, h2, h3, h4 {
+        font-family: 'Open Sans', sans-serif;
+        color: #333;
+        font-weight: 600;
     }
-    .stPlotlyChart, div[data-testid="stDecoration"] {
-        background-color: #ffffff;
-        padding: 20px;
-        border: 1px solid #e0e0e0;
-    }
-    h1 {
-        font-family: 'Playfair Display', serif;
-        font-size: 48px;
-        font-weight: 700;
-        color: #121212;
-        margin-bottom: 30px;
-        text-align: center;
-    }
-    h3 {
-        font-family: 'Playfair Display', serif;
-        font-size: 24px;
-        font-weight: 700;
-        color: #121212;
-        margin-top: 40px;
-        margin-bottom: 20px;
-    }
-    p, .stMarkdown {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 18px;
+    p {
+        font-family: 'Open Sans', sans-serif;
+        color: #666;
+        font-size: 14px;
         line-height: 1.6;
-        color: #333333;
     }
-    .stSidebar {
-        background-color: #f8f8f8;
-        border-right: 1px solid #e0e0e0;
+    .metric-card {
+        background-color: #f5dfbf;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 15px;
     }
-    .stSidebar .stMarkdown {
-        font-family: 'Source Sans Pro', sans-serif;
-        font-size: 16px;
+    .metric-value {
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+    }
+    .stSelectbox {
+        background-color: #f5dfbf;
     }
 </style>
 """, unsafe_allow_html=True)

@@ -4,11 +4,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Настраиваем стили для фона и отступов
-st.markdown(
-    f""" <style> html, body {{ background-color: #ffb347 !important; margin-left: 10% !important; /* Отступ слева */ margin-right: 10% !important; /* Отступ справа */ padding: 0 !important; }} .element-container {{ margin-left: auto !important; margin-right: auto !important; width: 80% !important; }} </style> """,
-    unsafe_allow_html=True
-)
+# Функция для изменения фона с помощью JavaScript
+def set_bg_hack(main_color):
+    max_characters = 5000  # Максимальное количество символов для заполнения
+    snippet = f""" <style> .reportview-container {{ background: {main_color} !important; }} .sidebar-content {{ background: {main_color} !important; }} </style> """
+    return snippet + " " * max_characters
+
+# Применяем фоновый цвет
+st.markdown(set_bg_hack('#ffb347'), unsafe_allow_html=True)
 # Заголовок
 st.title("Мой Дашборд")
 

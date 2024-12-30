@@ -18,7 +18,7 @@ st.markdown("""
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap');
     
     .stApp {
-        background-color: #ffffff;
+        background-color: #ffb347;
     }
     .main {
         max-width: 900px;

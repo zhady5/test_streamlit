@@ -1,0 +1,7 @@
+/* styles.css */
+body {
+    background-color: #ffb347 !important;
+    margin-left: 10% !important;  /* Отступ слева */
+    margin-right: 10% !important; /* Отступ справа */
+    padding: 0 !important;
+}

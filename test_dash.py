@@ -106,6 +106,7 @@ def plot_chart(data, x, y, kind, ax):
 #plt.style.use('seaborn')
 colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b']
 sns.set_palette(sns.color_palette(colors))
+sns.set(rc={"axes.facecolor": "cornflowerblue", "figure.facecolor": "cornflowerblue"})
 
 # Графики
 st.subheader("Анализ Данных")

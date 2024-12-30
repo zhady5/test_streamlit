@@ -1,12 +1,41 @@
+Я понимаю вашу проблему с изменением цвета фона. Давайте попробуем другой подход, используя встроенные возможности Streamlit для стилизации. Вот обновленный код с изменениями для установки цвета фона и некоторыми дополнительными улучшениями:
+
+```python
 import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Применяем фоновый цвет
-# Подключение внешнего CSS-файла
-st.markdown('<link rel="stylesheet" href="styles.css">', unsafe_allow_html=True)
+# Установка цвета фона и стиля страницы
+st.set_page_config(
+    page_title="Мой Дашборд",
+    page_icon="📊",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
+
+# Применение пользовательского CSS для изменения цвета фона и стилей
+st.markdown("""
+<style>
+    .stApp {
+        background-color: #f0f2f6;
+    }
+    .stMetric {
+        background-color: #ffffff;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .stPlotlyChart {
+        background-color: #ffffff;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+</style>
+""", unsafe_allow_html=True)
+
 # Заголовок
 st.title("Мой Дашборд")
 
@@ -36,34 +65,52 @@ with col4:
 # Разделение на три строки для графиков
 row1, row2, row3 = st.columns((1, 1, 1))
 
+# Функция для создания и отображения графика
+def plot_chart(data, x, y, kind, ax):
+    if kind == 'line':
+        sns.lineplot(x=data[x], y=data[y], ax=ax)
+    elif kind == 'bar':
+        sns.barplot(x=data[x], y=data[y], ax=ax)
+    elif kind == 'scatter':
+        sns.scatterplot(x=data[x], y=data[y], ax=ax)
+    elif kind == 'hist':
+        sns.histplot(data[y], kde=True, ax=ax)
+    elif kind == 'box':
+        sns.boxplot(y=data[y], ax=ax)
+    elif kind == 'kde':
+        sns.kdeplot(data[y], shade=True, ax=ax)
+    ax.set_title(f"{kind.capitalize()} Plot")
+    ax.set_xlabel(x)
+    ax.set_ylabel(y)
+
 # Первый ряд графиков
 with row1:
     fig1, ax1 = plt.subplots()
-    sns.lineplot(x=data['x'], y=data['y1'], ax=ax1)
+    plot_chart(data, 'x', 'y1', 'line', ax1)
     st.pyplot(fig1)
     
     fig2, ax2 = plt.subplots()
-    sns.barplot(x=data['x'], y=data['y2'], ax=ax2)
+    plot_chart(data, 'x', 'y2', 'bar', ax2)
     st.pyplot(fig2)
 
 # Второй ряд графиков
 with row2:
     fig3, ax3 = plt.subplots()
-    sns.scatterplot(x=data['x'], y=data['y3'], ax=ax3)
+    plot_chart(data, 'x', 'y3', 'scatter', ax3)
     st.pyplot(fig3)
     
     fig4, ax4 = plt.subplots()
-    sns.histplot(data['y4'], kde=True, ax=ax4)
+    plot_chart(data, 'x', 'y4', 'hist', ax4)
     st.pyplot(fig4)
 
 # Третий ряд графиков
 with row3:
     fig5, ax5 = plt.subplots()
-    sns.boxplot(y=data['y5'], ax=ax5)
+    plot_chart(data, 'x', 'y5', 'box', ax5)
     st.pyplot(fig5)
     
     fig6, ax6 = plt.subplots()
-    sns.kdeplot(data['y6'], shade=True, ax=ax6)
+    plot_chart(data, 'x', 'y6', 'kde', ax6)
     st.pyplot(fig6)
 
 # Дополнительное описание
@@ -71,3 +118,4 @@ st.write("""
 ### Описание данных
 Это тестовые данные, которые были сгенерированы случайным образом для демонстрации возможностей дашборда.
 """)
+```
